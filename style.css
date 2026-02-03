@@ -627,6 +627,19 @@ footer {
     .detail-card {
         width: 100%;
     }
+
+    .hero-btns {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding: 0 40px;
+    }
+
+    .btn {
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
 }
 
 /* Sticky Contact Buttons */
