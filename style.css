@@ -128,7 +128,7 @@ header {
 /* Hero Section */
 .hero-section {
     height: 100vh;
-    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1562259949-e8e7689d7828?q=80&w=2131&auto=format&fit=crop');
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -691,4 +691,138 @@ footer {
 .detail-card a:hover {
     color: var(--accent-color);
     text-decoration: underline;
+}
+
+/* Service Categories New Layout */
+.service-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.category-card {
+    background: var(--bg-light);
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-soft);
+    border: 1px solid rgba(0, 0, 0, 0.03);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(227, 30, 36, 0.1);
+}
+
+/* Header Decor */
+.category-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--accent-color), var(--accent-secondary));
+    opacity: 0.8;
+}
+
+.cat-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.cat-icon {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(135deg, rgba(227, 30, 36, 0.1), rgba(12, 77, 162, 0.1));
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: var(--accent-color);
+}
+
+.cat-header h3 {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    /* Increased size */
+    color: var(--primary-color);
+    margin: 0;
+}
+
+/* Service List */
+.service-list {
+    list-style: none;
+    padding: 0;
+}
+
+.service-list li {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-dark);
+    font-size: 1.05rem;
+    border-bottom: 1px dashed rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.service-list li:last-child {
+    border-bottom: none;
+}
+
+.service-list li i {
+    color: var(--accent-secondary);
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.service-list li:hover {
+    padding-left: 5px;
+    color: var(--accent-color);
+}
+
+.service-list li:hover i {
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+/* Malayalam Text specific */
+.malayalam-text,
+.malayalam-content {
+    font-family: 'Inter', 'Noto Sans Malayalam', sans-serif;
+    /* Setup fallback if needed */
+    line-height: 1.7;
+}
+
+.malayalam-content .lead-text {
+    font-size: 1.25rem;
+    color: var(--primary-color);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.malayalam-content p {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+    .service-categories {
+        grid-template-columns: 1fr;
+    }
+
+    .category-card {
+        padding: 25px;
+    }
 }
